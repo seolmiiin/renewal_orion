@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type = "text/javascript" src="./js/slide_4_3.js"></script>
+  
+  </script>
+  
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box;}
+    li{list-style:none;}
+    a{text-decoration:none;}
+    img{border:none; vertical-align:bottom;}
+    
+    .container{
+      width:910px;
+      height:500px;
+      margin:0 auto;
+      border:1px solid pink;
+      position:relative;
+      -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+
+    }
+   .slides.animated{
+    -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+    }
+    .container ul.slides{
+     /* width:3045px;*/ /*자바스크립트로 정의해주자*/
+      
+      /* overflow:hidden; */
+      position:absolute; /*띄어야한다.*/
+      top:30px; left:0;
+      display:flex; /*가로배열*/
+    }
+    .container ul.slides li.slide{
+      width:100%;
+      float:left;
+      margin-right:5px;
+      box-sizing:border-box;
+    }
+    .container ul.slides li:last-child{
+      margin-right:0;
+    }
+    .container ul.slides li.slide img{
+      width:100%;
+      border:2px solid black;
+    }
+    /*버튼*/
+    #prev{
+      position:absolute; top:250px; left:-100px;
+    }
+    #next{
+      position:absolute; top:250px; right:-100px;
+    }
+
+
+
+    /*********************/
+.info{
+  width:70%;
+  margin:20px auto;
+  border:2px solid #333;
+}
+.info pre{
+  line-height:1.8;
+}
+      </style>
+</head>
+<body>
+<!--
+  자바스크립트문법으로 만들기
+  옆으로 이동시키는 슬라이드 만들때 구조
+  .container>ul.slides + .prev+.next(버튼)>li.slide>img
+
+-->
+
+<h2>직접짜는 3개보이는 멀티슬라이드_자동으로움직이게</h2>
+<div class="container">
+  
+  <!--슬라이드-->
+  <ul class="slides">
+    
+    <li class="slide"><a href=""><img src="./sosle_img/img1.png" alt="슬라이드1"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img2.png" alt="슬라이드2"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img3.png" alt="슬라이드3"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img4.png" alt="슬라이드4"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img5.png" alt="슬라이드5"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img6.png" alt="슬라이드6"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img7.png" alt="슬라이드7"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img8.png" alt="슬라이드8"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img9.png" alt="슬라이드9"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img10.png" alt="슬라이드10"></a></li>
+
+  </ul>
+  
+  
+  <!--버튼-->
+  <a href="" id="prev"><img src="./img/left.png" alt=""></a>
+  <a href="" id="next"><img src="./img/right.png" alt=""></a>
+
+</div><!--end-container-->
+  
+
+
+
+
+</body>
+</html>

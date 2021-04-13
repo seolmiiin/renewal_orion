@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type = "text/javascript" src="./js/slide_4_2.js"></script>
+  
+  </script>
+  
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box;}
+    li{list-style:none;}
+    a{text-decoration:none;}
+    img{border:none; vertical-align:bottom;}
+    
+    .container{
+      width:910px;
+      height:500px;
+      margin:0 auto;
+      border:1px solid pink;
+      position:relative;
+      -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+
+    }
+   .slides.animated{
+    -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+    }
+    .container ul.slides{
+     /* width:3045px;*/ /*자바스크립트로 정의해주자*/
+      
+      /* overflow:hidden; */
+      position:absolute; /*띄어야한다.*/
+      top:30px; left:0;
+      display:flex; /*가로배열*/
+    }
+    .container ul.slides li.slide{
+      width:100%;
+      float:left;
+      margin-right:5px;
+      box-sizing:border-box;
+    }
+    .container ul.slides li:last-child{
+      margin-right:0;
+    }
+    .container ul.slides li.slide img{
+      width:100%;
+      border:2px solid black;
+    }
+    /*버튼*/
+    #prev{
+      position:absolute; top:250px; left:-100px;
+    }
+    #next{
+      position:absolute; top:250px; right:-100px;
+    }
+
+
+
+    /*********************/
+.info{
+  width:70%;
+  margin:20px auto;
+  border:2px solid #333;
+}
+.info pre{
+  line-height:1.8;
+}
+      </style>
+</head>
+<body>
+<!--
+  자바스크립트문법으로 만들기
+  옆으로 이동시키는 슬라이드 만들때 구조
+  .container>ul.slides + .prev+.next(버튼)>li.slide>img
+
+-->
+
+<h2>직접짜는 3개보이는 멀티슬라이드</h2>
+<div class="container">
+  
+  <!--슬라이드-->
+  <ul class="slides">
+    
+    <li class="slide"><a href=""><img src="./sosle_img/img1.png" alt="슬라이드1"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img2.png" alt="슬라이드2"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img3.png" alt="슬라이드3"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img4.png" alt="슬라이드4"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img5.png" alt="슬라이드5"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img6.png" alt="슬라이드6"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img7.png" alt="슬라이드7"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img8.png" alt="슬라이드8"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img9.png" alt="슬라이드9"></a></li>
+    <li class="slide"><a href=""><img src="./sosle_img/img10.png" alt="슬라이드10"></a></li>
+
+  </ul>
+  
+  
+  <!--버튼-->
+  <a href="" id="prev"><img src="./img/left.png" alt=""></a>
+  <a href="" id="next"><img src="./img/right.png" alt=""></a>
+
+</div><!--end-container-->
+  
+
+
+<div class="info">
+  <pre>
+    //변수를 누구를 잡아야 할까s 생각해보면 ul은 당연히 잡아야겠고 ul의 너비를 줘야한다.
+var slides = document.querySelector('.slides'),
+    //slides안에 slide들도 변수로 잡아야한다.
+    //개수를 알수있어야 하닌까 배열로 변수로 잡혀야 하닌까 ,all로 
+    slide = document.querySelectorAll('.slides li'),
+    //버튼누를때 순서잡기 위해서 인덱스번호잡아준다.시작하는번호가 0이게
+    currentIdx = 0,
+    //끝인지 처음인지 알기위해서 슬라이드갯수도 있어야 한다.
+    slideCount = slide.length, //위의 변수 slide(.slides li) 의 길이를 
+    slideWidth = 300,
+    slideMargin = 30,
+    //이전버튼.다음버튼
+    prevBtn = document.querySelector('.prev'),
+    nextBtn = document.querySelector('.next');
+
+
+
+//이렇게 필요한 변수를 잡아줬고, 이제 li의 가로배열은 float걸어줬기때문에 여기서할필요가 없고
+//li개수를 구해서 ul의 너비를 바꿔야한다.
+//슬라이드너비를 지정해줘야한다.
+//slides.style.width=??
+slides.style.width= (slideWidth + slideMargin) * slideCount - slideMargin + 'px';
+//css에서 지정해놓은 width지워도된다.
+//슬라이드 움직이려면 330만큼 움직이면 된다. (슬라이드너비+마진)
+//next클릭하면 -330,-개념으로 움직인다.
+//숫자가 시작하자마자 currentIdn번호가 0이였는데  next클릭해서 이동하면 currentIdx는 1이 되고 330만큼 이동해야한다.
+//이거에 대한 함수를 만들자
+
+    function moveSlide(num){
+      //숫자가 들어오면 누구의 left를 바꾼다고?
+      //slides.left값을 바꿔야한다. (ul이 왼쪽으로 이동하는거닌까.)
+      slides.style.left = -num * 330 + 'px';
+        //1이 넘어오면 -330이 되어야 하고 2가 넘어오면 -660이 되어야하닌까
+      currentIdx=num;
+      //0번째를 보고있는데 num숫자가 넘어오면 숫자num으로 인덱스번호 바껴야하닌까.
+      
+    }//반드시 숫자가 넘어와야만 일하는녀석
+
+
+//currentIdx에 num한것을 nextBtn에 넘겨줘야하닌까 
+nextBtn.addEventListener('click',function(){
+  //moveSlide함수에 넘겨준다.
+  // moveSlide(currentIdx + 1);
+  //언제 멈춰야할까 currentIdx번호가 7번일때 멈춰야한다 총li가 8개이므로 가운데오는li가 7이여야 /
+  //조건문작성
+  if(currentIdx < slideCount-3){  //1이 아니라 3이다. 3개씩보이는 구조닌까,.
+     moveSlide(currentIdx + 1);
+    // console.log(currentIdx);
+  }else{
+    //끝인데도 불구하고 눌렀으면 처음으로 돌아가게하라
+    moveSlide(0);
+  }
+});
+
+prevBtn.addEventListener('click',function(){
+  if(currentIdx > 0){  //1이 아니라 3이다. 3개씩보이는 구조닌까,.
+     moveSlide(currentIdx - 1);
+    // console.log(currentIdx);
+  }else{ //마지막으로 이동하라
+    moveSlide(slideCount-3);
+  }
+});
+//css가서 ul바뀌는 과정보기 위해서 transition설정
+  </pre>
+</div>
+</body>
+</html>

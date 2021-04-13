@@ -1,0 +1,237 @@
+/*회원가입*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+/*noto sans 맑은고딕 @import방식으로 불러오기*/
+
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+font-family: 'Noto Sans KR', sans-serif;
+font-size:0.75em;  /*body안에 웹사이트 기본 사이즈 0.75em서체 지정*/
+color:#000;
+
+position:relative;
+        }
+a{
+text-decoration:none;
+color:#000;
+}
+      
+li{
+list-style:none;
+}
+
+	img{
+		border:none;
+		vertical-align:bottom;
+	}
+	input{
+		outline:none;
+	}
+	input:focus{
+		outline:none;
+	}
+	/*********header*************/
+.logo{
+	width:100%;
+	height:100px;
+	line-height:75px;
+	text-align:center;
+	background:#eb1925;
+	position:relative;
+}
+.logo p:first-child img{
+	width:200px;
+}
+.logo p:last-child{
+
+	width:80px;
+	height:80px;
+	position:absolute;
+	top:0;
+	left:0;
+	
+}	
+.logo p:last-child img{
+	width:60px;
+	border-radius:50%;
+	padding:10px;
+	border:2px solid #fff;
+}
+	
+	/****************배경*************************/
+.bg{
+	
+	width:100%;
+	height:200px;
+	background:#eb1925;
+	padding:20px;
+	margin-top:100px;
+	color:#fff;
+		
+}
+.bg h4{width:80%;
+margin:0 auto;
+padding:10px;}
+
+.bg h1{width:80%;
+margin:0 auto;
+padding:20px;}
+/************메타포아이콘******************/
+/****회원가입글씨******/
+h2.agree-title{
+	width:40%;
+margin:0 auto;
+	color:#eb1925;
+	font-size:20px;
+	text-align:left;
+	/* border:1px solid red; */
+	margin-top:100px;
+	
+}
+
+.join-icon{
+	width:40%;
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:100px;
+	height:180px;
+	border-top:4px solid #666;
+	border-bottom:1px solid #eee;
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+	
+}
+.join-icon>p{}
+.join-icon>p span{
+	display:block;
+	/* border:1px solid red; */
+	text-align:center;
+	margin-top:10px;
+	font-weight:bold;
+	
+}
+/*회원가입글씨 빨간색*/
+.join-icon>p:nth-child(1) span{
+	color:#eb1925;
+
+}
+.join-icon>p>img{
+	width:70px;
+}
+.join-icon>p:nth-child(2)>img,p:nth-child(4)>img{
+	width:50px;
+}
+/****************약관동의**************/
+.title{
+	padding:30px;
+	margin:0 auto;
+	/* border-bottom:2px solid #eb1925; */
+	margin-bottom:10px;
+}
+
+/* .title h1{ */
+  /* text-align:center; */
+  /* color:#eb1925; */
+  /* font-size:40px; */
+/* } */
+.title .login_container{
+width:50%;
+border:1px solid red;
+padding:10px;
+display:flex;
+justify-content:center;
+align-items:space-between;
+}
+
+div{
+  margin:0 auto;
+
+}
+
+
+/*박스공통*/
+.box{
+  background:#ededed;
+  width:50%;
+  height:250px;
+  overflow:auto;
+  margin-bottom:10px;
+  padding:10px;
+  font-size:12px;
+  box-sizing:border-box;
+}
+
+
+
+table{
+margin:0 auto;
+  border:1px solid #666;
+  border-collapse:collapse;
+}
+
+thead{
+background:rgba(235, 25, 37, .5);
+color:#eee;
+
+}
+
+tr{
+  border:1px solid black;
+}
+
+td{
+  border:1px solid black;
+}
+
+
+	
+.btn{
+width:50%;
+position:relative;
+}
+	
+input.next-btn, #next-btn2{
+width:48.888%;
+padding:30px;
+border:none;
+background:#eb1925;
+color:#eee;
+font-size:20px;
+font-weight:600;
+text-align:center;
+float:left;
+margin-left:1%;
+margin-top:100px;
+margin-bottom:100px;
+}
+input.next-btn[type="reset"]{
+	background:#c3c1c1;
+}
+input.next-btn:hover{
+color:black;
+cursor:pointer;
+
+}
+
+	#agree-btn{
+		width:50%;
+		overflow:hidden;
+		/* border:1px solid red; */
+		margin:0 auto;
+		margin-bottom:30px;
+		
+	}	
+	#agree-btn>label{
+		display:flex;
+		align-items:center;
+		justify-content:flex-start;
+		margin-top:10px;
+		font-size:14px;
+	}
+input[type="radio"]{
+	width:10px;
+	height:10px;
+		display:block;
+		margin-right:7px;
+	}

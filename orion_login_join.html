@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko"><!--한글지원-->
+
+    <head><!--상단 외부플러그인 css,js파일 연동-->
+		<meta charset="utf-8"><!--한글지원-->
+		<title>orion_join</title> 	<!--웹문서제목-->
+		
+		
+		<link rel="stylesheet" type="text/css" href="./mystyle/orion_join.css">
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+	<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>	
+		<style>
+		*{margin:0 auto; padding:0;}
+				@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+				/*noto sans 맑은고딕 @import방식으로 불러오기*/
+
+
+				
+		</style>
+    
+	
+	
+	
+	
+	
+	</head>
+ 
+    <body><!--본문문서구조-->
+	
+
+		
+		
+				<div class="logo">
+					<!--오리온로고-->
+					<p><a href="./index.html"><img src="./img/img_logo/orionlogo_5.png"></a></p>
+					<p><a href="./orion_login_agree.html"><img src="./img/img_header/left_1.png" width="60px"></a></p>
+					</div>		
+				
+	
+		
+
+
+
+
+<!----------------------회원가입---------------------------->
+<div class="join-wrap-all">
+<h2>회원가입 ></h2>
+<div class="join-icon">
+<p><img src="./img/img_agree/lock.png" alt="약관"><span>약관동의</span></p>
+<p><img src="./img/img_agree/right.png" alt="화살표"></p>
+<p><img src="./img/img_agree/img3.png" alt="완료"><span>회원가입</span></p>
+<p><img src="./img/img_agree/right.png" alt="화살표"></p>
+<p><img src="./img/img_agree/add-user.png" alt="가입"><span>가입완료</span></p>
+</div>
+</div>
+
+<div class="join-wrap">
+  <div class="form-title">
+  
+<h1>기본정보</h1>
+    <p>필수항목 </p>
+  </div>
+  <!-------------------------------------------------------->
+<form action="">
+  <fieldset>
+  <ul>
+    <li>
+      <label for="log-name">이름</label>
+       <input  id="log-name" type="text" placeholder="이름을 입력해주세요" title="이름 입력" required>
+    </li>
+    
+    <li>
+    <label for="log-id">회원아이디</label>
+     <div class="form-inner"> <input id="log-id" type="text" placeholder="회원아이디 입력" title="아이디 입력" required>
+       <button id="idCheck">중복확인</button></div>
+      
+    </li>
+    <p>4~12 자의 영문, 숫자를 조합해서 사용해주세요.</p>
+    
+    <li>
+      <label for="log-pw">비밀번호</label>
+     <input id="log-pw" type="password" minlength="8" maxlength="16" placeholder="비밀번호 입력" required>
+     
+    </li>
+     <p>8~16 자의 영문, 숫자 및 특수문자를 조합해서 사용해주세요.</p>
+    <li>
+      <label for="log-pwck">비밀번호 확인</label>
+     <input id="log-pwck"type="password" minlength="8" maxlength="16" placeholder="비밀번호 확인" title="비밀번호 확인" required>
+     
+    </li> <p>8~16 자의 영문, 숫자 및 특수문자를 조합해서 사용해주세요.</p>
+    
+    <li>
+      <label for="log-birth">생년월일</label>
+    <input id="log-birth"type="date" minlength="8" maxlength="16" placeholder="" title="생년월일 연도 선택" required>
+    </li>   
+    
+    <li>
+      <label for="">e-mail</label>
+   
+       <div class="form-inner"> <input id="log-email" type="email"  placeholder="@" required>
+        <select class="mail">
+          <option value="">직접입력선택</option>
+          <option value="naver">naver.com</option>
+          <option value="hanmail">hanmail.net</option>
+          <option value="daum">daum.net</option>
+          <option value="nate">nate.com</option>
+          <option value="gmail">gmail.com</option>
+          <option value="hotmail">hotmail.com</option>
+        </select>  <div>
+      
+    </li>   
+    
+  </ul>
+  </fieldset>
+  
+ 
+</form>
+  
+</div>
+  <!------------------------------------------->
+  
+  <div class="join-wrap">
+    <div class="form-title">
+     <h1>추가정보</h1>
+     <p>선택사항</p>
+    </div>
+    
+    <form class="add-form">
+      <fieldset>
+       <p>선택&nbsp;입력사항으로&nbsp;상품,&nbsp;당첨경품&nbsp;등의 배송정보로 사용됩니다.<br>
+    배송정보&nbsp;유/무에&nbsp;따라&nbsp;이벤트&nbsp;당첨이&nbsp;사전 예고없이&nbsp;취소될&nbsp;수&nbsp;있으니<br> 이벤트&nbsp;참여&nbsp;시&nbsp;유의하시기&nbsp;바랍니다.</p>
+    <ul>
+      <li>
+         <label for="postnum">우편번호</label>
+     <div class="form-inner"><input type="text" id="postnum" readonly="readonly" title="우편번호검색버튼을 누르세요">
+       <button id="postck" height="45px">우편번호검색</button></div>
+         </li>
+        <li>
+          <label for="address">주소</label>
+        <input type="text" id="address" readonly="readonly" placeholder="주소입력" title="주소입력">
+          <input id="address-dt" type="text" placeholder="상세주소입력" title="상세주소입력">
+      </li>
+      
+     
+      <li>
+        <label for="recom-id">추천아이디</label>
+        <div class="form-inner"><input id="recom-id" type="text" placeholder="추천 ID입력">
+          <button id="idck">추천ID확인</button></div>
+      </li>
+    </ul>
+  </fieldset>
+  
+  <div class="join-btn2">
+  <input type="submit" value="완료" onclick="alert('회원가입이 완료되었습니다');">
+   <input type="reset" value="취소" onclick="alert('처음으로 돌아갑니다.');">
+  </div>
+      </form>
+    </div>
+
+
+
+
+<script>
+$('#idCheck').on('click',idDoubleCheck);
+function idDoubleCheck(){
+	var result=$('#idCheck').val();
+	if(result===''){
+			alert("아이디를 입력해주세요");
+		}else{alert("사용가능한 아이디입니다");}
+	}
+</script>
+
+
+
+</body>
+
+</html>

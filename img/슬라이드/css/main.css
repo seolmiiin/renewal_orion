@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/*
+ * Slideshow
+ */
+ <style>
+
+
+ .slideshow{
+   overflow:hidden;
+   min-width:960px;
+   height:465px;
+   /* min-width:960px; 최소너비가 960, 960이하로는 줄어들지 않는다. */
+ position:relative;
+ border:5px solid red;
+ }
+
+ .slideshow img{
+   width:1600px;
+   display:none;
+   /*이미지 모두 겹쳐놓는다.*/
+   position:absolute;
+   left:50%; /*이미지 가운데*/
+   margin-left:-800px;
+ }
+ .slideshow img:first-child{
+  display:inline;
+ }

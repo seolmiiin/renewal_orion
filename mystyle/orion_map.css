@@ -1,0 +1,339 @@
+/*마켓오레스토랑*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+/*noto sans 맑은고딕 @import방식으로 불러오기*/
+
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+font-family: 'Noto Sans KR', sans-serif;
+font-size:0.75em;  /*body안에 웹사이트 기본 사이즈 0.75em서체 지정*/
+color:#000;
+
+position:relative;
+        }
+a{
+text-decoration:none;
+color:#000;
+}
+      
+li{
+list-style:none;
+}
+
+							
+/*map*/
+
+
+
+/**********************슬라이드*********************/
+
+
+
+
+/*슬라이드*/
+section.bg{	
+width:100%;
+height:727px;
+/*border:1px solid red;*/
+background:url("../img/img_bg/map_bg.png") no-repeat top 0 center;
+background-size:contain;
+margin-top:140px;
+/*border:1px solid red;*/
+position:relative;
+	}
+ /*메뉴*/
+
+
+
+section.bg .wrap2{
+	/*border:1px solid red;*/
+	width:80%;
+	overflow:hidden;
+	margin:0 auto;
+	margin-top:50px;
+	text-align:center;
+position:absolute;
+bottom:0;
+left:10%;
+	
+}
+section.bg .wrap2 li{
+	font-size:1.5em;
+	width:25%;
+	overflow:hidden;
+	border-bottom:1px solid #333;
+	float:left;
+	letter-spacing:2px;
+	
+}
+section.bg .wrap2 li a{
+	display:block;
+	padding:20px;
+}
+section.bg .wrap2 li a:hover{
+	background:rgba(0,0,0,.05);
+
+}
+section.bg .wrap2 li frame{
+	width:20%;
+	height:20%;
+	border:1px solid red;
+} 
+
+
+
+
+/************************지도***************************************/
+
+
+section.map{
+  width:100%;
+ 
+  /*border:1px solid red;*/
+ 
+}
+section.map h1{
+  text-align:center;
+  width:50%;
+  padding:20px;
+  font-size:2em;
+  border-bottom:1px solid #333;
+  margin:0 auto;
+    margin-bottom:50px;
+}
+section.map .container{
+  margin:0 auto;
+  width:80%;
+  /*border:1px solid red;*/
+  display:grid;
+  grid-template-rows:repeat(4,200px);
+  grid-template-columns:repeat(4,1fr);
+  gap:100px 10px;
+  margin-top:100px;
+  margin-bottom:500px; /*밀어내기용*/
+}
+section.map .container .box{
+  border:.5px solid #333;
+  
+
+}
+
+section.map .container .box:nth-child(1){
+  
+}
+section.map .container .box:nth-child(2){
+  grid-column:2/5;
+  grid-row:1/3;
+}
+section.map .container .box:nth-child(2) iframe{
+  width:100%;
+  height:100%;
+}
+section.map .container .box:nth-child(3){border:none;}
+section.map .container .box:nth-child(4){}
+section.map .container .box:nth-child(5){
+    grid-column:2/5;
+  grid-row:3/5;
+}
+section.map .container .box:nth-child(5) iframe{
+  width:100%;
+  height:100%;
+}
+section.map .container .box:nth-child(6){border:none;}
+
+section.map .box h2{
+  font-size:20px;
+  text-align:center;
+  margin:20px;
+  
+}
+section.map .box p{
+  margin-bottom:10px;
+  font-size:14px;
+  text-align:left;
+  margin:20px 10px 10px 20px;
+  
+}
+
+
+
+/*************************top버튼*******************************************/
+			
+div.top-btn{
+
+position: fixed; /*고정*/
+bottom:400px;
+right:10px;
+/*border:5px solid green;*/
+	}	
+
+.top-btn a{
+display:block;
+/*border:1px solid yellow;*/
+box-sizing:border-box;
+}
+
+
+}
+div.top-btn img{
+	width:100%;
+}
+
+.top-btn a:hover::before{
+ 	content:"";
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:url("../img_point/top_2.png") no-repeat left 0 top 0;
+	background-size:contain;
+  }
+
+/****************************푸터***********************************/
+footer{
+	box-sizing:border-box;
+	color:#eee;
+}
+footer.container1{
+	width:100%;
+	background:#a0a0a0;
+	/*overflow:hidden;*/
+	padding:30px;
+	color:#eee;
+
+}
+footer.container1 .innerbox{
+	width:80%;
+	height:200px;
+	/*border:10px solid yellow;*//*영역표시선*/
+	/*overflow:hidden;*/
+	margin:0 auto;
+	display:flex;
+	
+
+	
+
+
+	
+}
+
+footer.container1 .item{
+	/*float:left;*/
+	width:16%;
+	/*border:1px solid black;*/
+
+	
+}
+/*첫번째*/
+footer .item.item1{
+	width:5%;
+	text-align:right;
+
+}
+		/*공지사항이미지*/
+footer .item.item1 img{
+width:55%;
+}
+
+/*두번째*/
+footer .item.item2{
+	width:10%;
+	font-size:2em;
+	font-size:25px;
+	}
+footer .item.item2 img{
+	width:13%;
+	
+}
+footer .item.item3{
+	padding-left:70px;
+	width:35%;
+	text-align:left;
+	line-height:1.8;
+	border-right:1px solid #eee;
+}
+/*네번째*/
+footer .item.item4{
+	width:5%;
+	text-align:right;
+	
+	}
+				/*물음표이미지*/
+footer .item.item4 img{
+	width:55%;
+
+}
+/*다섯번째*/
+footer .item.item5{
+	font-size:25px;
+	width:10%;
+	
+	
+}
+footer .item.item5 img{
+	width:25%;
+
+}
+/*여섯번째*/
+footer .item.item6{
+	padding-left:70px;
+	width:35%;
+	
+	line-height:1.8;
+	
+	
+}
+
+/*오리온로고*/
+
+footer.container2{
+	background:#ff0000;
+	padding:25px;
+	overflow:hidden;
+	margin:0 auto;
+	/*border:1px solid yellow;*/
+}
+footer.container2 .innerbox{
+	width:80%;
+	/*border:1px solid yellow;*//*영역표시선*/
+	overflow:hidden;
+	margin:0 auto;
+	
+}
+
+footer.container2 .innerbox .item01{
+	/*border:1px solid yellow;*//*영역표시선*/
+	width:50%;
+	padding:5px;
+	margin:0 auto;
+	float:left;
+
+}
+/*sns로고*/
+footer.container2 .innerbox .item02{
+	width:50%;
+	/*border:1px solid yellow;*//*영역표시선*/
+	padding:10px 0 10px 0;
+	text-align:right;
+	float:left;
+	
+}
+footer.container2 .item02 img{
+	padding-left:15px;
+}
+footer.container3{
+	background:#ff0000;
+	padding:20px;
+	
+	
+}
+footer.container3 .innerbox{
+	width:80%;
+	/*border:5px solid yellow;*/ /*영역표시선*/
+	overflow:hidden;
+	margin:0 auto;
+	margin-bottom:100px;
+	
+}

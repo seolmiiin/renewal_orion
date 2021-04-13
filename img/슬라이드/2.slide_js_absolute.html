@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>hover_img_caption</title>
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/normalize.css">
+<script src="./js/vendor/modernizr.custom.min.js"></script>
+<script src="./js/vendor/jquery-1.10.2.min.js"></script>
+<script src="./js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="./js/main.js"></script>
+
+<style>
+
+
+  .slideshow{
+    overflow:hidden;
+    min-width:960px;
+    height:600px;
+    /* min-width:960px; 최소너비가 960, 960이하로는 줄어들지 않는다. */
+  position:relative;
+  border:5px solid red;
+  }
+
+  .slideshow img{
+    width:1200px;
+   display:none;
+    /*이미지 모두 겹쳐놓는다.*/
+    position:absolute;
+    left:50%; /*이미지 가운데*/
+    margin-left:-600px;
+  }
+  .slideshow img:first-child{
+   display:inline;
+  }
+</style>
+
+</head>
+<body>
+<header class="header">
+  <div class="inner">
+    <div class="slideshow">
+      <img src="./img/slide1.jpg" alt="slide1" width="1200px">
+      <img src="./img/slide2.png" alt="slide2" width="1200px">
+      <img src="./img/slide3.jpg" alt="slide3" width="1200px">
+      <img src="./img/slide4.jpg" alt="slide4" width="1200px">
+    </div>
+  </div>
+</header>
+
+
+<script>
+$(function(){
+
+  var slides = $('.slideshow img'),
+  slideCount= slides.length,
+  currentIndex=0;
+
+  slides.eq(currentIndex).fadeIn();
+  
+  var timer = setInterval(showNextSlide,3500);
+  
+
+  function showNextSlide(){
+
+    var nextIndex = (currentIndex + 1) % slideCount;
+  
+    slide.eq(currentIndex).fadeOut();
+    slide.eq(nextIndex).fadeIn();
+    currentIndex=nextIndex;
+  }
+  
+  
+  //마우스 올렸을때 멈추게
+function timeron(){
+  setInterval(showNextSlide, 3500);
+}
+function timeroff(){
+clearInterval(timer);
+};
+
+slides.mouseover(function(){
+ timeroff();
+})
+.mouseout(function(){
+ timeron();
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>

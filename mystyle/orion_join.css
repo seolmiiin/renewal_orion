@@ -1,0 +1,357 @@
+/*회원가입*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+/*noto sans 맑은고딕 @import방식으로 불러오기*/
+
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{
+font-family: 'Noto Sans KR', sans-serif;
+font-size:0.75em;  /*body안에 웹사이트 기본 사이즈 0.75em서체 지정*/
+color:#000;
+
+position:relative;
+        }
+a{
+text-decoration:none;
+color:#000;
+}
+      
+li{
+list-style:none;
+}
+
+	input{
+		outline:none;
+	}
+	input:focus{
+		outline:none;
+	}
+	/*********header*************/
+.logo{
+	width:100%;
+	height:100px;
+	line-height:140px;
+	text-align:center;
+	background:#eb1925;
+	position:relative;
+}
+.logo p:first-child img{
+	width:200px;
+}
+.logo p:last-child{
+
+	width:80px;
+	height:80px;
+	position:absolute;
+	top:0;
+	left:0;
+	
+}	
+.logo p:last-child img{
+	width:60px;
+	border-radius:50%;
+	padding:10px;
+	border:2px solid #fff;
+}
+	
+	/****************배경*************************/
+.bg{
+	
+	width:100%;
+	height:200px;
+	background:#eb1925;
+	padding:20px;
+	margin-top:100px;
+	color:#fff;
+		
+}
+.bg h4{width:80%;
+margin:0 auto;
+padding:10px;}
+
+.bg h1{width:80%;
+margin:0 auto;
+padding:20px;}
+/****회원가입글씨******/
+h2{width:50%;
+margin:0 auto;
+	color:#eb1925;
+	font-size:20px;
+	text-align:left;
+	/* border:1px solid red; */
+	margin-top:100px;
+	
+}
+
+/************메타포아이콘******************/
+
+.join-icon{
+	width:50%;
+	margin:0 auto;
+	margin-top:20px;
+	height:180px;
+	border-top:4px solid #666;
+	border-bottom:1px solid #eee;
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+	
+}
+
+.join-icon>p span{
+	display:block;
+	/* border:1px solid red; */
+	text-align:center;
+	margin-top:10px;
+	font-weight:bold;
+	
+}
+/*회원가입 아이콘 글씨 빨간색*/
+.join-icon>p:nth-child(3) span{
+	color:#eb1925;
+
+}
+.join-icon>p>img{
+	width:70px;
+	
+}
+.join-icon>p:nth-child(2)>img,p:nth-child(4)>img{
+	width:40px;
+	
+	
+}
+
+/**************************회원가입 form***********************************/
+
+.join-wrap{
+  width:50%;
+  margin:0 auto;
+  margin-top:100px;
+  /* border:1px solid red; */
+  display:flex; 
+}
+.join-wrap:last-child{
+	margin-bottom:200px;
+}
+
+.form-title{
+  width:30%;
+}
+.form-title>h1{
+  font-size:30px;
+  margin:10px 0;
+}
+
+form{
+  width:70%;
+  border-top:2px solid #c3c1c1;
+
+/*   border:1px solid red; */
+}
+form>fieldset{
+  border:none;
+  width:100%;
+  /* border:1px solid red; */
+  padding:50px 15px;
+}
+form fieldset ul{
+width:100%;
+}
+form fieldset ul p{
+  font-size:11px;
+  margin-left:30%;
+  margin-bottom:8px;
+}
+form>fieldset>ul>li{
+  padding:5px;
+/*   border:1px solid #c3c1c1; */
+    display:flex;
+  align-items:center;
+  
+  justify-content:space-between;
+}
+form>fieldset>ul>li:first-child{margin-bottom:10px;}
+form>fieldset>ul>li:nth-child(8){margin-bottom:10px;}
+form>fieldset>ul>li:nth-child(9){margin-bottom:10px;}
+form>fieldset>ul>li> label{
+ position:relative;
+/*  border:1px solid #666; */
+ height:45px;
+ width:25%;
+  display:flex;
+  align-items:center;
+
+  font-size:14px;
+  font-weight:bold;
+}
+
+form>fieldset>ul>li>input{
+  border:1px solid #c3c1c1;
+  height:45px;
+    width:70%;
+	padding-left:8px;
+}
+form>fieldset>ul>li>input:focus{
+	background:#eee;
+}
+
+
+.form-inner{
+  /* border:2px solid red; */
+  width:70%;
+   
+  display:flex;
+  align-items:center;
+  border:
+  justify-content:space-between;
+}
+.form-inner>input{
+    border:1px solid #c3c1c1;
+	width:100%;
+}
+#log-id{
+  width:70%;
+  height:40px;
+  padding-left:8px;
+}
+#log-id:focus{
+	background:#eee;
+}
+button{
+  width:30%;
+  height:40px;
+  margin-left:5px;
+  border:1px solid #c3c1c1;
+  background:#fff;
+  font-size:12px;
+  color:#666;
+  cursor:pointer
+}
+
+#log-email{
+   width:70%;
+  height:45px;
+  padding-left:8px;
+}
+#log-email:focus{
+	background:#eee;
+}
+select.mail{
+  margin-left:5px;
+  height:45px;
+  width:30%;
+  border:1px solid #c3c1c1;
+  font-size:12px;
+  color:#666;
+  cursor:pointer;
+}
+/***추가정보****/
+.add-form{
+  width:70%;
+/*   border:5px solid red; */
+  
+}
+.add-form fieldset{
+    
+  padding:50px 15px;
+  width:auto;
+/*   border:2px solid blue; */
+   overflow:hidden;
+}
+.add-form fieldset p{
+  font-size:14px;
+  line-height:1.4;
+  margin-bottom:15px;
+}
+.add-form fieldset ul{
+/*   border:1px solid red; */
+  width:100%;
+ 
+  
+}
+
+.add-form fieldset ul li:nth-child(2){
+	margin-bottom:10px;
+}
+
+
+.add-form fieldset ul li label{
+  width:25%;
+}
+.add-form fieldset ul li:nth-child(2){
+  flex-wrap:wrap;
+  
+}
+#postnum{
+  width:100%;
+  height:45px;
+  border:1px solid #c3c1c1;
+  
+}
+#address{
+  width:70%;
+}
+#address-dt{
+  width:70%;
+  margin-left:30%;
+  margin-top:5px;
+}
+#recom-id{
+    width:100%;
+  height:45px;
+  border:1px solid #c3c1c1;
+}
+
+
+
+
+/*취소 완료 버튼*/
+.join-btn2{
+	margin-top:100px;
+
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.join-btn2 input{
+	display:block;
+	height:50px;
+	width:40%;
+	outline:none;
+	border:none;
+	cursor:pointer;
+	position:relative;
+	font-size:16px;
+	color:#fff;
+	font-weight:bold;
+	/* transition:all .4s; */
+}
+
+
+.join-btn2 input[type="submit"]{
+	background:#eb1925;
+	margin-right:25px;
+	
+}
+.join-btn2 input:hover{
+
+	color:#333;
+}
+
+.join-btn2 > input:hover::after{
+	content:"";
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:50%;
+	display:block;
+	background-color:rgba(0,0,0,.8);
+	
+}
+
+#idck{height:45px;}
+#postck{height:45px;}
+
+

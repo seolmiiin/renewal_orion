@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type = "text/javascript" src="./js/slide_3_2.js"></script>
+  
+  </script>
+  
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box;}
+    li{list-style:none;}
+    a{text-decoration:none;}
+    img{border:none; vertical-align:bottom;}
+    
+    .container{
+      width:50%;
+      height:500px;
+      margin:0 auto;
+      border:5px solid pink;
+      position:relative;
+
+
+    }
+   .slides.animated{
+    -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+    }
+    .container ul.slides{
+      width:400%;
+      border:3px solid blue;
+      /* overflow:hidden; */
+      position:absolute; /*띄어야한다.*/
+      top:0px; left:0;
+      display:flex; /*가로배열*/
+    }
+    .container ul.slides li.slide{
+      width:100%;
+      float:left;
+      box-sizing:border-box;
+    }
+    .container ul.slides li.slide img{
+      width:100%;
+    }
+    /*버튼*/
+    #prev{
+      position:absolute; top:250px; left:-100px;
+    }
+    #next{
+      position:absolute; top:250px; right:-100px;
+    }
+    .button-wrap{
+      position:absolute;
+      bottom:0; left:50%; transform:translateX(-50%);
+    }
+    button{
+      width:50px;
+      height:50px;
+      outline:none;
+      border:none;
+      background:#eee;
+      
+      color:#eb1925;
+      border-radius:50%;
+      cursor:pointer;
+    }
+    button:focus{
+      color:#fff;
+      background:red;
+      outline:none;
+    }
+
+
+
+    /*********************/
+.info{
+  width:70%;
+  margin:20px auto;
+  border:2px solid #333;
+  line-height:1.8;
+  font-size:16px;
+}
+
+      </style>
+</head>
+<body>
+<!--
+  자바스크립트문법으로 만들기
+  옆으로 이동시키는 슬라이드 만들때 구조
+  .container>ul.slides + .prev+.next(버튼)>li.slide>img
+
+-->
+
+<h2>자동슬라이드 만들기</h2>
+<div class="container">
+  
+  <!--슬라이드-->
+  <ul class="slides">
+    <li class="slide"><img src="./img/slide1.jpg" alt="슬라이드1"></li>
+    <li class="slide"><img src="./img/slide2.png" alt="슬라이드2"></li>
+    <li class="slide"><img src="./img/slide3.jpg" alt="슬라이드3"></li>
+    <li class="slide"><img src="./img/slide4.jpg" alt="슬라이드4"></li>
+  </ul>
+  
+  
+  <!--버튼-->
+  <a href="" id="prev"><img src="./img/left.png" alt=""></a>
+  <a href="" id="next"><img src="./img/right.png" alt=""></a>
+
+
+</div><!--end-container-->
+
+<div class="info">
+  <pre>
+  자동으로 슬라이드 움직이게 하려면 setInterval에 담아줘야 한다.
+  setInterval : 일정시간간격으로 주기적으로 실행
+  
+  <사용법>
+  1. setInterval에 변수지정한다__나중에 clearInterval사용하기 위해서
+  var timer(변수) = setInterval(할일,delay시간);
+  
+  2. 할일지정 : 다음슬라이드로 바뀌게끔
+  
+  var timer = setInterval(function(){
+    //다음슬라이드
+    var nextSlide=(currentIndex + 1) % slideCount  //공식처럼 외우자
+    slidecount는 li의 length값 
+    현재 여기 li개수가 4이므로 length값은 4이다.
+  
+    currentIndex가 0일때 (0+1) % 4 = 1  -->1을 4로나누면 값은 0 나머지값은 1
+    currentIndex가 1일때 (1+1) % 4 = 2  -->2을 4로나누면 값은 0 나머지값은 2
+    currentIndex가 2일때 (2+1) % 4 = 3  -->3을 4로나누면 값은 0 나머지값은 3
+    currentIndex가 3일때 (3+1) % 4 = 0  -->4을 4로나누면 값은 1 나머지값은 0
+    <b>이 값들을 슬라이드 이동함수moveSlide(에 넘겨주면 된다.</b>
+
+  },2000);
+  
+`3.
+  최종적으로
+  <b>
+    var timer=setInterval(function(){
+    var nextIndex = (currentIndex+1)%slideCount;
+    moveSlide(nextIndex);
+   },1500);</b>
+  
+  4. 슬라이드에 마우스오버하면 멈추고 
+  마우스 벗어나면 움직이도록 만들기
+
+  5.근데 setInterval을 담은 변수 이timer는 함수가 아니라서 재사용이 안된다.
+  //그래서 함수로 만들어줘야한다.
+  
+  //6. 함수를 만들다 startAutoSlide
+  //위에 변수로 담아놓은 timer를 startAutoSlide함수안에 집어넣는다.
+  
+  function startAutoSlide(){
+    // var timer=setInterval(function(){
+   
+    },1500);
+  }
+  //6-2. timer가 함수안에 들어오니 지역변수로 바꼈다. 
+  밖에서도 사용할수 있게 전역변수로 바꿔주자
+  변수선언해놓은곳에가서 var timer=undefined라고 해준다.
+  이름은 있는데 아직 값이 없다라는 뜻
+
+//6-3.  timer가 전역변수가 됬으니 startAutoSlide함수안에 timer에 var지우기
+ 
+//6-4. 최종적으로
+
+<b>
+  function startAutoSlide(){
+      timer=setInterval(function(){
+         var nextIndex = (currentIndex+1)%slideCount;
+         moveSlide(nextIndex);
+    },1500);
+  }
+</b>
+
+//7. 호출해준다.
+  startAutoSlide();
+  
+  
+  
+
+  </pre>
+  </div>
+
+
+
+</body>
+</html>

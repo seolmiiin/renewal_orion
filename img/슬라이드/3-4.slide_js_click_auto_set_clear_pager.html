@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type = "text/javascript" src="./js/slide_3_4.js"></script>
+  
+  </script>
+  
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box;}
+    li{list-style:none;}
+    a{text-decoration:none;}
+    img{border:none; vertical-align:bottom;}
+    
+    .container{
+      width:60%;
+      height:500px;
+      margin:0 auto;
+      border:5px solid pink;
+      position:relative;
+      overflow:hidden;
+
+    }
+   .slides.animated{
+    -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+    }
+    .container ul.slides{
+      width:400%;
+      border:3px solid blue;
+      /* overflow:hidden; */
+      position:absolute; /*띄어야한다.*/
+      top:0px; left:0;
+      display:flex; /*가로배열*/
+    }
+    .container ul.slides li.slide{
+      width:100%;
+      float:left;
+      box-sizing:border-box;
+    }
+    .container ul.slides li.slide img{
+      width:100%;
+    }
+    /*버튼*/
+    #prev{
+      position:absolute; top:250px; left:10px;z-index:10;      
+    }
+    #next{
+      position:absolute; top:250px; right:10px;z-index:10;
+    }
+    .pager{
+      position:absolute;
+      bottom:0; left:50%; transform:translateX(-50%);
+    }
+    .pager span{
+      width:20px;
+      height:20px;
+      line-height:20px;
+      text-align:center;
+      background:#eee;
+      display:inline-block;
+      color:#eb1925;
+      border-radius:50%;
+      cursor:pointer;
+    }
+    .pager span.active{
+    background: #333;
+}
+
+
+/*********************/
+.info{
+  width:70%;
+  margin:20px auto;
+  border:2px solid #333;
+}
+.info pre{
+  line-height:1.8;
+}
+
+      </style>
+</head>
+<body>
+<!--
+  자바스크립트문법으로 만들기
+  옆으로 이동시키는 슬라이드 만들때 구조
+  .container>ul.slides + .prev+.next(버튼)>li.slide>img
+
+-->
+
+<h2>pager</h2>
+<div class="container">
+  
+  <!--슬라이드-->
+  <ul class="slides">
+    <li class="slide"><img src="./img/slide1.jpg" alt="슬라이드1"></li>
+    <li class="slide"><img src="./img/slide2.png" alt="슬라이드2"></li>
+    <li class="slide"><img src="./img/slide3.jpg" alt="슬라이드3"></li>
+    <li class="slide"><img src="./img/slide4.jpg" alt="슬라이드4"></li>
+  </ul>
+  
+  
+  <!--버튼-->
+  <a href="" id="prev"><img src="./img/left.png" alt=""></a>
+  <a href="" id="next"><img src="./img/right.png" alt=""></a>
+
+ 
+  <!---1.pager absolute로 띄워서 위치시키기-->
+  <!--
+    2.data-idx활용하는법과 span안에 글자 활용하는 법 두가지가 있다.
+    3. 자바로가서 pager안에 span을 클릭하면 할일
+  -->
+  <p class="pager">
+    <span data-idx="0">1</span>
+    <span data-idx="1">2</span>
+    <span data-idx="2">3</span>
+    <span data-idx="3">4</span>
+
+</p>
+ 
+ 
+</div><!--end-container-->
+
+
+
+<div class="info">
+  <pre>
+  <!---1.pager absolute로 띄워서 위치시키기-->
+  <!--
+    2.data-idx활용하는법과 span안에 글자 활용하는 법 두가지가 있다.
+    3. 자바로가서 pager안에 span을 클릭하면 할일
+  -->
+  
+  //<b>pager로 슬라이드 이동하기</b>
+//pager span이 배열로 들어오고 있으닌까. for반복문
+//data-idx활용
+<b>
+ for(var i=0; i<$pagerBtn.length; i++){
+  
+  $pagerBtn[i].addEventListener('click',function(e){
+      console.log(e.target);
+    <u>값을 가져와야하닌까.getAttribute</u>
+    var pagerNum= e.target.getAttribute('data-idx');
+      <i>클릭한 놈의(evnet.target)
+        속성이 data-idx의 값을 가져다줘</i>
+      이 값을 pagerNum변수에 담아서 
+      이동함수에 넣어주기  
+     moveSlide(pagerNum);
+  });
+ }
+</b>
+/*
+getAttribute 속성의 값을 가져오는것
+setAttribute 속성의 값을 바꾸는 것
+hasAttribute 값이 있는지 없는지 확인
+*/
+
+/*
+<b>innerText 태그안에 내용 반환</b>
+내용확인 :  태그.innerText
+내용바꾸기 : 태그.innerText = "b";
+<b>innerHTML 의 태그를 반환</b>
+태그확인 : 태그.innerHTML 
+태그바꾸기 : 태그.innerHTML = "태그"__태그교체
+*/
+
+//<b>2. span안에 글자활용</b>
+for(var i=0; i < $pagerBtn.length; i++){
+  //console.log( $pagerBtn[i]);
+  $pagerBtn[i].addEventListener('click',function(e){
+    console.log(e.target.innerText);
+    <b> var pagerNum= e.target.innerText -1;</b>
+        //숫자가 1부터 시작하는까 -1해줘야한다.
+     moveSlide(pagerNum);
+
+    // //모든 $pagerBtn에 active제거 하고 클릭된 그 요소에만 active추가
+    // for(var j=0; j<$pagerBtn.length; j++){
+    //   $pagerBtn[j].classList.remove('active'); 
+    //   //j가 0,1,2,3 이닌까 모든요소 삭제
+    //   //근데 선택된놈은 active추가해줘야한다.
+    //   //for밖으로 나가서
+    // }
+    //   e.target.classList.add('active'); 
+
+  });//click
+ }//큰 for
+/*
+근데 active되는 코드가 클릭할때 생겨서 알겠는데 
+클릭하고 나서 검은점이 계속 클릭한 자리에 그대로 있고
+슬라이드는 계속움직이고있다.
+우리가 어떤 슬라이드를 보고 있는지 확인하려면
+<b>이 active되는 코드가 moveSLide함수안으로 가야한다.</b>
+
+*/
+ 
+    //2.슬라이드이동함수
+    function moveSlide(idx){
+      slides.classList.add('animated');
+      slides.style.left=idx * -100 +'%';
+      currentIndex=idx;
+      <b>  for(var j=0; j<$pagerBtn.length; j++){
+        $pagerBtn[j].classList.remove('active'); 
+        }
+        $pagerBtn[idx].classList.add('active'); 
+  
+     }//moveSlide
+  </b>
+  
+  </pre>
+  
+  </div>
+  
+  
+
+
+</body>
+</html>

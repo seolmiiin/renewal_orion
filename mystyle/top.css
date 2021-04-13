@@ -1,0 +1,184 @@
+
+*{margin:0 padding:0; box-sizing:border-box;}
+
+li{list-style:none;}
+
+#wrap{
+  background:black;
+  height:2000px;
+  position:relative;
+}
+#main_menu{
+  width:70%;
+  height:2000px;
+  position:relative;
+  background:olive;
+  margin:0 auto;
+  color:#fff;
+}
+#quick_menu{
+  border:5px solid #fff;
+  position:absolute;
+  top:300px;
+ right:-7.8%;
+}
+/*************************top버튼*******************************************/
+
+
+#toggle-side{
+  display:none;
+}
+#toggle-side:checked ~ #wrap-quick{
+display:block;
+}
+#toggle-side:checked ~ label img{
+transform:rotate(45deg);
+transition:all .3s;
+}
+
+
+#wrap-quick{
+/* display:none; */
+border:1px solid #fff;
+}
+.sidebox1{
+
+  position:fixed;
+  bottom:100px;
+  right:50px;
+}
+.sidebox3{
+ 
+  position:fixed;
+  bottom:160px;
+  right:50px;
+}
+.sidebox4{
+
+  position:fixed;
+  bottom:220px;
+  right:50px;
+}
+.sidebox5{
+  border:1px solid #fff;
+  position:fixed;
+  bottom:280px;
+  right:50px;
+}
+
+
+.sideitem{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+ background:#eb1925;
+  text-align:right;
+  line-height:80px;
+}
+
+.sideitem3:hover{
+  animation: movemove .5s;
+  animation-fill-mode:forwards;
+}
+
+.sideitem4:hover{
+  animation: movemove .5s;
+  animation-fill-mode:forwards;
+}
+.sideitem5:hover{
+  animation: movemove .5s;
+  animation-fill-mode:forwards;
+}
+
+
+
+
+
+
+
+
+
+
+.sideitem2:hover::before{
+content:"고객문의";
+  position:absolute;
+  width:50%;
+  height:100%;
+  top:-15px;left:20px;
+ font-size:16px;
+  color:#fff;
+ /* border:1px solid #eee;*/
+  padding-right:20px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.sideitem3:hover::before{
+content:"KAKAO";
+ font-size:16px;
+  position:absolute;
+  width:50%;
+  height:100%;
+  top:-15px;left:20px;
+ 
+    color:#fff;
+ /* border:1px solid #eee;*/
+  padding-right:20px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+ 
+
+.sideitem4:hover::before{
+content:"PR";
+  position:absolute;
+  width:50%;
+  height:100%;
+  top:-15px;left:20px;
+  font-size:16px;
+    color:#fff;
+ /* border:1px solid #eee;*/
+  padding-right:20px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.sideitem5:hover::before{
+content:"IR";
+font-size:16px;
+  position:absolute;
+  width:50%;
+  height:100%;
+  top:-15px;left:20px;
+  color:#fff;
+ /* border:1px solid #eee;*/
+  padding-right:20px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+
+/*탑버튼*/
+.top-btn{
+  border:1px solid #fff;
+	text-align:center;
+	
+	overflow:hidden;
+		width:50px;
+		height:50px;
+  position:fixed;
+  bottom:48px;
+  right:50px;
+  background:#fff;
+  border-radius:50%;
+  
+}
+
+@keyframes movemove{
+  0%{
+		width:50px;
+     border-radius:50%;
+  }
+  100%{
+    width:160px;
+    border-radius:50px;
+  }
+  
+}

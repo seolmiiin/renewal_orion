@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type = "text/javascript" src="./js/slide_3_1.js"></script>
+  
+  </script>
+  
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box;}
+    li{list-style:none;}
+    a{text-decoration:none;}
+    img{border:none; vertical-align:bottom;}
+    
+    .container{
+      width:50%;
+      height:500px;
+      margin:0 auto;
+      border:5px solid pink;
+      position:relative;
+
+
+    }
+   .slides.animated{
+    -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+    }
+    .container ul.slides{
+      width:400%;
+      border:3px solid blue;
+      /* overflow:hidden; */
+      position:absolute; /*띄어야한다.*/
+      top:30px; left:0;
+      display:flex; /*가로배열*/
+    }
+    .container ul.slides li.slide{
+      width:100%;
+      float:left;
+      box-sizing:border-box;
+    }
+    .container ul.slides li.slide img{
+      width:100%;
+    }
+    /*버튼*/
+    #prev{
+      position:absolute; top:250px; left:-100px;
+    }
+    #next{
+      position:absolute; top:250px; right:-100px;
+    }
+
+
+
+    /*********************/
+.info{
+  width:70%;
+  margin:20px auto;
+  border:2px solid #333;
+}
+.info pre{
+  line-height:1.8;
+}
+      </style>
+</head>
+<body>
+<!--
+  자바스크립트문법으로 만들기
+  옆으로 이동시키는 슬라이드 만들때 구조
+  .container>ul.slides + .prev+.next(버튼)>li.slide>img
+
+-->
+
+<h2>슬라이드 html구조와 click</h2>
+<div class="container">
+  
+  <!--슬라이드-->
+  <ul class="slides">
+    <li class="slide"><img src="./img/slide1.jpg" alt="슬라이드1"></li>
+    <li class="slide"><img src="./img/slide2.png" alt="슬라이드2"></li>
+    <li class="slide"><img src="./img/slide3.jpg" alt="슬라이드3"></li>
+    <li class="slide"><img src="./img/slide4.jpg" alt="슬라이드4"></li>
+  </ul>
+  
+  
+  <!--버튼-->
+  <a href="" id="prev"><img src="./img/left.png" alt=""></a>
+  <a href="" id="next"><img src="./img/right.png" alt=""></a>
+
+</div><!--end-container-->
+
+<div class="info">
+  <pre>
+
+    <u>1. 기본 구조 익히기</u>
+
+    <엄마 position:relative>
+    <b> .container(slide-wrap싼거)</b>
+
+                <자식은 다띄워서 위치시키자 position: absolute>
+                //ul의 width는 100%가아니라 슬라이드개수 * 100% 이다.
+                //옆으로 나열해놓은 상태라서
+  
+             <b>  >   ul.slide</b>
+             <b>  >    버튼두개</b>
+                            <후손>
+                            //li는 float:left 가로로 배열해놓자
+                            //또는 ul에 display:flex해줘도됨!
+                             
+                            <b>>li*슬라이드개수만큼</b>
+    
+  
+  2. 구조를 만들었으면
+
+  엄마 100%위에 ul이 position absolute로 띄워져 있고 넘쳐있는상태
+  일단은 확인하기 위해서 엄마에 overflow hidden은 잠시 작업을 다끝내고 적용해주자
+ 
+  3. 버튼도 position으로 위치시켜주자
+  
+
+  script로 가서
+    제이쿼리에서 $(function(){할일}); 한것처럼
+
+    (1).
+    자바스크립트도     
+    <b>documet.addEventListener('DOMContentLoaded,function(){
+      }); 만들어주고 이안에 코드작성한다.</b>
+
+    (2). <strong>변수지정</strong>
+    var slides = document.querySelector('.slides');//ul
+        slide = document.querySelectorAll('.slide'), //li
+        slideCount = slide.length, //li 4개닌까
+        currentIndex=0,
+        
+        //버튼
+        prev = document.getElementById('prev'), 
+        next = document.getElementById('next');
+
+  **querySelector는 한놈만 가져오는거고
+  ***querySelectorAll 다가져오는것
+  *** li는 여러개 있는데 우리는 이걸 모두 다 가져와서 배열개념으로 사용할것이기
+  때문에 querySelectorAll로 꼭 가져온다.
+  ***이렇게 가져온 li는 배열이 아니고 유사배열이라고 하는데
+  배열의 메소드를 다쓰진 못하지만 인덱스번호와 length속성을 활용할수있다.
+
+
+  (3). <b>버튼클릭하면 이벤트발생</b>
+ --버튼변수불러와서
+ prev.addEventListener('click',function(){});
+ next.addEventListener('click',function(){});
+ 
+ (4) <b>슬라이드 이동함수 만들자</b>
+
+ function goToSlide(idx){
+   slides.classList.add('animated');  //transition적용되서 부드럽게 이동하게 하기 위해서 미리css에 지정해놓은 클래스 불러오기  //제이쿼리에 addClass와 같은것
+ <b> slides.style.left= idx * -100 +'%';</b>
+ <b> currentIndex=idx;</b>
+}
+<b>goToSlide(0);//호출</b>
+중요!!! 호출을 해줘야 작동을 하닌까
+0번인덱스가진 슬라이드 먼저 나타나도록해주자
+
+
+
+**classList말고 아예 css에 적용해놓는 방법도 있음
+*** <b> slides.style.left= idx * -100 +'%';</b>
+
+
+다시(3)으로 가서
+
+(3).
+
+---<b>인덱스번호가 0보다 클때 이전버튼 누르면 현재 인덱스에서-1로 가게
+만약에 인덱스번호가 0이라면 인덱스 마지막 번호로 이동하게</b>
+
+
+
+  1.
+  <b>if(currentIndex>0){
+  currentIndex-1로 이동하라  
+  }</b>
+  2. 위에서 이동하는 함수를 만들었으닌까
+  함수를 불러온다
+  3. <b>goToSlide(currentIndex-1)</b>
+
+  4. 그래서 결과적으로 작성은 이렇게 해주자
+  <b>if(currentIndex>0){
+    goToSlide(currentIndex-1)
+    }</b>
+  5. else {아니라면, 즉 인덱스번호가 0이라면 인덱스마지막번호로 이동해라}
+  6. 마지막인덱스는 length-1 해준값이닌까
+  <b>slideCount-1</b>
+
+  7. 정리하자면
+<b>
+  prev.addEventListener('click',function(e){
+    e.preventDefault(); //a링크방지
+    if(currentIndex>0){
+      goToSlide(currentIndex-1);
+    }else{
+      goToSlide(slideCount-1);
+    }
+    
+    ***링크방지해줘야 반응한다. 중요!!!
+</b>
+
+
+<b>//next버튼</b>
+인덱스번호가 0,1,2,3 즉 3이랑 같거나 커지면 처음으로 돌아가라
+아니라면 인덱스+1해라
+<b>
+next.addEventListener('click',function(e){
+  e.preventDefault();
+  if(currentIndex>=slideCount-1){
+    goToSlide(0);
+  }else{
+    goToSlide(currentIndex+1);
+  }
+  
+});
+</b>
+
+  </pre>
+  
+  </div>
+
+
+
+</body>
+</html>

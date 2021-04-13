@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "C:\\Users\\최설민\\Desktop\\슬라이드"
+		},
+		{
+			"path": "c:\\Users\\최설민\\Desktop\\스크롤"
+		},
+		{
+			"path": "c:\\Users\\최설민\\Desktop\\jquery"
+		}
+	],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "프로젝트"
+  }
+}

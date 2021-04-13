@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>orion회사소개</title>
+<link rel="stylesheet" type="text/css" href="./mystyle/common.css">
+<link rel="stylesheet" href="./mystyle/orion_introduce2.css">
+<script type="text/javascript" src="./js/jquery.1.12.4.js"></script>
+
+<script type="text/javascript">
+!function(e,n,t){function r(e,n){return typeof e===n}function s(){var e,n,t,s,o,i,a;for(var l in w)if(w.hasOwnProperty(l)){if(e=[],n=w[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=r(n.fn,"function")?n.fn():n.fn,o=0;o<e.length;o++)i=e[o],a=i.split("."),1===a.length?Modernizr[a[0]]=s:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=s),C.push((s?"":"no-")+a.join("-"))}}function o(e){var n=_.className,t=Modernizr._config.classPrefix||"";if(x&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),x?_.className.baseVal=n:_.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):x?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function a(e,n){return function(){return e.apply(n,arguments)}}function l(e,n,t){var s;for(var o in e)if(e[o]in n)return t===!1?e[o]:(s=n[e[o]],r(s,"function")?a(s,t||n):s);return!1}function f(e,n){return!!~(""+e).indexOf(n)}function u(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function c(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function d(n,t,r){var s;if("getComputedStyle"in e){s=getComputedStyle.call(e,n,t);var o=e.console;if(null!==s)r&&(s=s.getPropertyValue(r));else if(o){var i=o.error?"error":"log";o[i].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else s=!t&&n.currentStyle&&n.currentStyle[r];return s}function p(){var e=n.body;return e||(e=i(x?"svg":"body"),e.fake=!0),e}function m(e,t,r,s){var o,a,l,f,u="modernizr",c=i("div"),d=p();if(parseInt(r,10))for(;r--;)l=i("div"),l.id=s?s[r]:u+(r+1),c.appendChild(l);return o=i("style"),o.type="text/css",o.id="s"+u,(d.fake?d:c).appendChild(o),d.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(n.createTextNode(e)),c.id=u,d.fake&&(d.style.background="",d.style.overflow="hidden",f=_.style.overflow,_.style.overflow="hidden",_.appendChild(d)),a=t(c,e),d.fake?(d.parentNode.removeChild(d),_.style.overflow=f,_.offsetHeight):c.parentNode.removeChild(c),!!a}function y(n,r){var s=n.length;if("CSS"in e&&"supports"in e.CSS){for(;s--;)if(e.CSS.supports(c(n[s]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var o=[];s--;)o.push("("+c(n[s])+":"+r+")");return o=o.join(" or "),m("@supports ("+o+") { #modernizr { position: absolute; } }",function(e){return"absolute"==d(e,null,"position")})}return t}function g(e,n,s,o){function a(){c&&(delete N.style,delete N.modElem)}if(o=r(o,"undefined")?!1:o,!r(s,"undefined")){var l=y(e,s);if(!r(l,"undefined"))return l}for(var c,d,p,m,g,v=["modernizr","tspan","samp"];!N.style&&v.length;)c=!0,N.modElem=i(v.shift()),N.style=N.modElem.style;for(p=e.length,d=0;p>d;d++)if(m=e[d],g=N.style[m],f(m,"-")&&(m=u(m)),N.style[m]!==t){if(o||r(s,"undefined"))return a(),"pfx"==n?m:!0;try{N.style[m]=s}catch(h){}if(N.style[m]!=g)return a(),"pfx"==n?m:!0}return a(),!1}function v(e,n,t,s,o){var i=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+T.join(i+" ")+i).split(" ");return r(n,"string")||r(n,"undefined")?g(a,n,s,o):(a=(e+" "+z.join(i+" ")+i).split(" "),l(a,n,t))}function h(e,n,r){return v(e,t,t,n,r)}var C=[],w=[],S={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){w.push({name:e,fn:n,options:t})},addAsyncTest:function(e){w.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=S,Modernizr=new Modernizr;var _=n.documentElement,x="svg"===_.nodeName.toLowerCase(),b=S._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];S._prefixes=b,Modernizr.addTest("csspositionsticky",function(){var e="position:",n="sticky",t=i("a"),r=t.style;return r.cssText=e+b.join(n+";"+e).slice(0,-e.length),-1!==r.position.indexOf(n)});var P="Moz O ms Webkit",T=S._config.usePrefixes?P.split(" "):[];S._cssomPrefixes=T;var z=S._config.usePrefixes?P.toLowerCase().split(" "):[];S._domPrefixes=z;var E={elem:i("modernizr")};Modernizr._q.push(function(){delete E.elem});var N={style:E.elem.style};Modernizr._q.unshift(function(){delete N.style}),S.testAllProps=v,S.testAllProps=h,Modernizr.addTest("cssanimations",h("animationName","a",!0)),Modernizr.addTest("csstransforms",function(){return-1===navigator.userAgent.indexOf("Android 2.")&&h("transform","scale(1)",!0)}),Modernizr.addTest("csstransitions",h("transition","all",!0)),s(),o(C),delete S.addTest,delete S.addAsyncTest;for(var k=0;k<Modernizr._q.length;k++)Modernizr._q[k]();e.Modernizr=Modernizr}(window,document);
+</script>
+<script defer src='./js/introduce.js'></script>
+<script defer src="./js/introduce_jquery.js"></script>
+
+<style type="text/css">
+/* common */
+.wrap {position:relative;}
+.inner {max-width:1100px; height: 100%;  margin: 0 auto;}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+
+
+        <section class="fix_motion"> 
+            <article class="sticky_cont"> <!-- ticky -->
+                <div class="cont_box ">
+
+                    <div class="intro_txt">
+                        <h2>
+                        <span>O</span><span>R</span><span>I</span><span>O</span><span>N</span>
+                        </h2>
+                    </div>
+
+                    <div class="left_mask"></div>
+                    <div class="right_mask"></div>
+                    <figure class="bg_img">
+                      <p>The Original Orion</p>
+                      </figure>
+                
+                    <div class="ending_txt">
+                    
+                      <div class="tb_row">
+                            <div class="tb_cell">
+                                <p>
+                                  Only Orion <br>
+                                  Orion The Way
+                                </p>
+                            </div>
+                      </div>
+                    </div>
+
+
+                </div>
+            </article>
+        </section>
+        <!--두번째-->
+        <section class="intro2">
+            
+            <ul>
+              <li><img src="./img/intro_img/onlyorion2.png" alt=""><span></span></li>
+              <li><img src="./img/intro_img/onlyorion3.png" alt=""><span></span></li>
+              <li><img src="./img/intro_img/onlyorion4.png" alt=""><span></span></li>
+            </ul>
+        </section>
+        <!--세번째-->
+        <section class="intro3">
+          <div class="wrap">
+            <h1><span></span>ORION WAY</h1>
+            <p>오리온은&nbsp;혁신적인&nbsp;생각과&nbsp;방법으로&nbsp;오리온&nbsp;만의&nbsp;격을&nbsp;찾고,<br>
+            스스로&nbsp;그&nbsp;격을&nbsp;높임으로써&nbsp;시장을&nbsp;선도해&nbsp;나가고&nbsp;있습니다.<br>
+            진정으로&nbsp;고객을&nbsp;생각하는&nbsp;마음과,&nbsp;남다르게&nbsp;새로운&nbsp;가치를<br>
+            창출해내는&nbsp;<b>Only&nbsp;ORION</b>&nbsp;의&nbsp;경쟁력으로,&nbsp;오리온은<br>
+            World-class&nbsp;Company를&nbsp;향해&nbsp;힘차게&nbsp;도약하고&nbsp;있습니다.
+            
+            </p>
+          </div>
+          
+          <div class="bg_change color01"></div>
+          <div class="bg_change color02"></div>
+          <div class="bg_change color03"></div>
+          <div class="bg_change color04"></div>
+      </section>
+<!--------------section4--------------------------------->  
+
+
+<section class="intro4">
+
+  <img class="orionman" src="./img/intro_img/company_c2_man.png" alt="오리온슈퍼맨">
+  <div class="value">requestAnimationFrame</div>
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!---------------------section5------------------------------>
+
+      <section class="intro5">
+        <div class="wrap">
+          <h1><span></span>Management <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Philosphy</h1>
+            <div class="text-wrap">
+              <h2>업의&nbsp;본질을&nbsp;지켜&nbsp;오리온&nbsp;만의&nbsp;신념을 실천합니다.</h2>
+              <p>'사람이&nbsp;먹는&nbsp;음식만큼은 가장&nbsp;정직한&nbsp;마음으로 만들어야 한다'<br>
+              오리온이&nbsp;창업&nbsp;이후&nbsp;한결&nbsp;같이&nbsp;지켜온&nbsp;업의 본질입니다.<br>
+            오리온은&nbsp;정직한&nbsp;마음으로&nbsp;만든 건강하고&nbsp;좋은&nbsp;제품으로<br>
+          고객의&nbsp;삶에 행복을&nbsp;더한다는&nbsp;기업&nbsp;이념을 지속적으로<br>실천하고 있습니다.</p>
+            </div>
+        </div>
+      
+       
+    </section>
+
+<!---------------section6----------------------->
+<!---------------------section5------------------------------>
+
+<section class="intro6 scroll-content">
+ 
+    <div class="scroll-graphic"><!--이미지-->
+          <div class="graphic-item"><img class="scene-img" src="./img/intro_img/company_c3_chr2.png" alt=""></div>
+          <div class="graphic-item"><img class="scene-img" src="./img/intro_img/chocopie1.png" alt=""></div>
+          <div class="graphic-item"><img class="scene-img" src="./img/intro_img/bietnam.png" alt=""></div>
+
+          <div class="graphic-item"><img class="scene-img" src="./img/intro_img/snack2.png" alt=""></div>
+          <div class="graphic-item"><img class="scene-img" src="./img/intro_img/bar.png" alt=""></div>
+          <div class="graphic-item"><img class="scene-img" src="./img/intro_img/browni2.png" alt=""></div>
+
+          <div class="graphic-item"><img class="scene-img" src="./img/intro_img/orionlogo_5.png" alt=""></div>
+
+    </div><!--end-scroll-graphic-->
+    <div class="scroll-text global-width">
+      <div class="step">
+        <p>
+         <img src="./img/intro_img/text1.png" alt="">
+
+        </p>
+      </div>
+      <div class="step">
+        <p>
+            <img src="./img/intro_img/text2_2.png" alt="">
+        </p>
+      </div>
+      <div class="step">
+        <p>
+          <img src="./img/intro_img/text3.png" alt="">
+        </p>
+      </div>
+
+      <div class="step">
+        <p>
+<img src="./img/intro_img/text4.png" alt="">
+        </p>
+      </div>
+      <div class="step">
+        <p>
+<img src="./img/intro_img/text5.png" alt="">
+        </p>
+      </div>
+      <div class="step">
+        <p>
+<img src="./img/intro_img/text6.png" alt="">
+        </p>
+      </div>
+      <div class="step">
+        <p>
+.
+        </p>
+      </div>
+
+ 
+
+
+  </div><!--scroll-text-->
+</section><!--scroll-content-->
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+*{
+  margin:0; padding:0; box-sizing:border-box;
+}
+li{
+  list-style:none;
+}
+a{
+  text-decoration: none;
+}
+img{
+  border:none;
+  vertical-align:bottom;
+}
+/**************************************/
+
+#wrap{
+width:60%;
+margin:0 auto;
+border:2px solid #333333;
+position:relative;
+
+}
+#bestbook_zone{
+border:1px solid red;
+width:100%;
+position:relative;
+overflow:hidden;
+margin:40px 0;
+}
+#bestbook_zone h3{
+  text-align:center;
+  margin-bottom:20px;
+}
+#best_bg{
+  width:100%;
+  height:235px;
+  margin:0 auto;
+  border:1px solid blue;
+  overflow:hidden;
+  position:relative;
+  padding:30px 0;
+  background:url("../img/bestbook_bg.gif") no-repeat top center/cover;
+  background-size:100%;
+}
+#best_bg ul{
+  /* width:80%; */
+
+
+  /* border:5px solid green; */
+}
+
+#best_bg ul li{ /*li마지막엔 마진없어라*/
+
+  /* margin-right:10px;  */
+  /* border:5px solid red;  */
+  /* float:left; */
+}
+#best_bg ul li:last-child{
+  margin-right:0;
+}
+#best_bg ul li a{
+  display:block;
+width:100%;
+text-align:center;
+color:#333;
+font-size:12px;
+}
+#best_bg ul li a span,strong{
+  display:block;
+ /* border:1px solid red; */
+ 
+}
+#best_bg ul li img{
+  width:70%;
+}
+#best_bg p.prev_btn{
+
+  position:absolute;
+  top:107.5px;
+  left:10px;
+}
+#best_bg p.next_btn{
+  position:absolute;
+  top:107.5px;
+  right:10px;
+}
+#best_bg p img{
+  width:20px;
+}

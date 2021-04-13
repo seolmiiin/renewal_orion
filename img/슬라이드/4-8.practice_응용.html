@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="../progressbar.js-master/progressbar.js-master/dist/progressbar.min.js"></script>
+  <script src="../progressbar.js-master/progressbar.js-master/dist/progressbar.js"></script> -->
+  <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+  <script type = "text/javascript" src="./js/slide_4_8.js"></script>
+  
+  </script>
+  
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box;}
+    li{list-style:none;}
+    a{text-decoration:none;}
+    img{border:none; vertical-align:bottom;}
+.loading{
+  width:100%;
+  height:50px;
+  overflow:hidden;
+  border:1px solid red;
+  position:relative;
+}
+    .loader {
+      background:orange;
+  position: absolute;
+	top:0; left:0;
+  /* transition: opacity .3s linear; */
+}
+    #loading-line {
+  width:100%;
+  height: 10px;
+  overflow: hidden;
+}
+
+.container{
+      width:100%;
+      height:700px;
+      margin:100px auto;
+      border:1px solid pink;
+      position:relative;
+      -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+      overflow:hidden;
+      display:flex;align-items: center;justify-content: center;
+    }
+   .slides.animated{
+    -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+    }
+    .container ul.slides{
+     width:600%;
+
+      /* overflow:hidden; */
+      position:absolute; /*띄어야한다.*/
+      top:-150px; left:0;
+      display:flex; /*가로배열*/
+    }
+    .container ul.slides li.slide{
+      width:100%;
+    
+      box-sizing:border-box;
+      /* opacity:.5; */
+    }
+    li.border{
+      transform:translateY('20px');
+      border-bottom:5px solid red;
+    }
+    .container ul.slides li:last-child{
+      margin-right:0;
+    }
+    .container ul.slides li.slide img{
+      width:100%;
+    
+    }
+    .container ul.slides li.slide img.img{
+      width:60%;
+      
+    }
+    /*버튼*/
+    #prev{
+      position:absolute; top:50%; left:50px;
+      z-index:15;
+    }
+    #prev img{
+      width:30px;
+      height:50px;
+    }
+    #next{
+      position:absolute; top:50%; right:50px;
+      z-index:15;
+    }
+    #next img{
+      width:30px;
+      height:50px;
+    }
+
+.pager{
+  /* border:5px solid green; */
+  width:100%;
+  position:absolute; 
+  bottom:20px;
+  left:calc(50% - '910px'); 
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.pager img{
+  width:15%;
+  
+  
+  display:inline-block;
+  cursor: pointer;
+  opacity:.45;
+}
+
+
+
+.pager img.active{
+    /* border:10px solid red; */
+    opacity:1;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+   }
+ 
+
+
+
+      </style>
+</head>
+<body>
+<div class="loading">
+  <div id="loading-line" class="loader"></div>
+</div>
+
+<div class="container">
+  
+  <!--슬라이드-->
+  <ul class="slides">
+    
+    <li class="slide"><a href=""><img src="./img/newslide1.png" alt="슬라이드1"></a></li>
+    <li class="slide"><a href=""><img src="./img/newslide2.png" alt="슬라이드2"></a></li>
+    <li class="slide"><a href=""><img src="./img/newslide3.png" alt="슬라이드3"></a></li>
+    <li class="slide"><a href=""><img src="./img/newslide4.png" alt="슬라이드4"></a></li>
+    <li class="slide"><a href=""><img src="./img/newslide5.png" alt="슬라이드5"></a></li>
+    <li class="slide"><a href=""><img src="./img/newslide6.png" alt="슬라이드6"></a></li>
+   
+  </ul>
+  
+  <div class="pager">
+    <img src="./img/new1.jpg" data-idx='0' alt="슬라이드1">
+    <img src="./img/new2.jpg" data-idx='1' alt="슬라이드2">
+    <img src="./img/new3.jpg" data-idx='2' alt="슬라이드3">
+    <img src="./img/new4.jpg" data-idx='3' alt="슬라이드4">
+    <img src="./img/new5.jpg" data-idx='4' alt="슬라이드5">
+    <img src="./img/new6.jpg" data-idx='5' alt="슬라이드6">
+   
+  </div>
+
+
+
+</div><!--end-container-->
+    <!--버튼밖으로 빼냄-->
+<a href="" id="prev"><img src="./img/left.png" alt=""></a>
+<a href="" id="next"><img src="./img/right.png" alt=""></a>
+
+
+
+
+
+</body>
+</html>

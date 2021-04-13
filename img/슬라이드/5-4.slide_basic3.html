@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type = "text/javascript" src="./js/slide_basic3.js"></script>
+  
+  </script>
+  
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box;}
+    li{list-style:none;}
+    a{text-decoration:none;}
+    img{border:none; vertical-align:bottom;}
+    
+    .container{
+      width:60%;
+      height:500px;
+      margin:0 auto;
+      border:5px solid pink;
+      position:relative;
+      overflow:hidden;
+
+    }
+   .slides.animated{
+    -webkit-transition: left .5s ease-in;
+      transition:left .5s ease-in;
+    }
+    .container ul.slides{
+      width:400%;
+      border:3px solid blue;
+      /* overflow:hidden; */
+      position:absolute; /*띄어야한다.*/
+      top:0px; left:0;
+      display:flex; /*가로배열*/
+    }
+    .container ul.slides li.slide{
+      width:100%;
+      float:left;
+      box-sizing:border-box;
+    }
+    .container ul.slides li.slide img{
+      width:100%;
+    }
+    /*버튼*/
+    #prev{
+      position:absolute; top:250px; left:-100px;z-index:2;      
+    }
+    #next{
+      position:absolute; top:250px; right:-100px;z-index:2;
+    }
+    .button-wrap{
+      position:absolute;
+      bottom:0; left:50%; transform:translateX(-50%);
+    }
+    button{
+      width:50px;
+      height:50px;
+      outline:none;
+      border:none;
+      background:#eee;
+      
+      color:#eb1925;
+      border-radius:50%;
+      cursor:pointer;
+    }
+    button:focus{
+      color:#fff;
+      background:red;
+      outline:none;
+    }
+      </style>
+</head>
+<body>
+<!--
+  자바스크립트문법으로 만들기
+  옆으로 이동시키는 슬라이드 만들때 구조
+  .container>ul.slides + .prev+.next(버튼)>li.slide>img
+
+-->
+
+
+<div class="container">
+  
+  <!--슬라이드-->
+  <ul class="slides">
+    <li class="slide"><img src="./img/slide1.jpg" alt="슬라이드1"></li>
+    <li class="slide"><img src="./img/slide2.png" alt="슬라이드2"></li>
+    <li class="slide"><img src="./img/slide3.jpg" alt="슬라이드3"></li>
+    <li class="slide"><img src="./img/slide4.jpg" alt="슬라이드4"></li>
+  </ul>
+  
+  
+  <!--버튼-->
+  <a href="" id="prev"><img src="./img/left.png" alt=""></a>
+  <a href="" id="next"><img src="./img/right.png" alt=""></a>
+
+  <div class="button-wrap">
+  <button class="btn">1</button>
+  <button class="btn">2</button>
+  <button class="btn">3</button>
+  <button class="btn">4</button>
+
+  </div>
+
+  <!-- <button id="run">▶</button>
+  <button id="stop">||</button> -->
+</div><!--end-container-->
+
+
+
+
+
+</body>
+</html>
